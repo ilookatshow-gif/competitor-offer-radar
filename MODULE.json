@@ -1,0 +1,15 @@
+{
+  "id": "competitor-offer-radar",
+  "version": "0.1.0",
+  "author": "Дмитрий Лукашов",
+  "scope": "Standalone offline CLI comparing two authorised structured offer snapshots by stable IDs. Observed facts only; no scraping, network, MCP, winner ranking, accounts or campaign writes.",
+  "rights_status": "original_code_reviewed",
+  "license": "MIT",
+  "origin": "New original standalone code, documentation and synthetic fixtures prepared from scratch for the owner's open-module request on 2026-10-08. No private Harness source or client data copied. Agent-assisted development disclosed.",
+  "dependencies": "Python 3.9+ standard library only",
+  "synthetic_example": true,
+  "telemetry": false,
+  "channel": "https://t.me/lookatsoul",
+  "site": "https://lookatshow.ru/executive?utm_source=github&utm_medium=open_module&utm_campaign=competitor-offer-radar&utm_content=module",
+  "publish_files": ["competitor_offer_radar.py", "install.py", "README.md", "README.ru.md", "LICENSE", "NOTICE.md", "MODULE.json", "AGENTS.md", "skills/competitor-offer-radar/SKILL.md", "tests/test_radar.py", "examples/before.json", "examples/after.json"]
+}

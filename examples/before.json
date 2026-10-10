@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "captured_at": "2026-10-01T10:00:00+03:00",
+  "offers": [
+    {"id":"strategy-session","name":"Учебный пример: стратегическая сессия","source_url":"https://example.test/strategy-session",
+      "price":{"amount":"10000","currency":"RUB","unit":"package","price_basis":"exact","tax":"included","min_order":"1"},
+      "delivery":{"value":"4","unit":"business_days"},
+      "components":[{"id":"interview","label":"Интервью","quantity":"2","unit":"meeting"},{"id":"report","label":"Отчёт","quantity":"1","unit":"document"}]},
+    {"id":"starter","name":"Учебный пример: стартовый пакет","source_url":"https://example.test/starter",
+      "price":{"amount":"0","currency":"RUB","unit":"package","price_basis":"exact","tax":"included","min_order":"1"},
+      "delivery":null,"components":null}
+  ]
+}
