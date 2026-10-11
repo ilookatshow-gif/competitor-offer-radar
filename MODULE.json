@@ -11,5 +11,5 @@
   "telemetry": false,
   "channel": "https://t.me/lookatsoul",
   "site": "https://lookatshow.ru/executive?utm_source=github&utm_medium=open_module&utm_campaign=competitor-offer-radar&utm_content=module",
-  "publish_files": ["competitor_offer_radar.py", "install.py", "README.md", "README.ru.md", "LICENSE", "NOTICE.md", "MODULE.json", "AGENTS.md", "skills/competitor-offer-radar/SKILL.md", "tests/test_radar.py", "examples/before.json", "examples/after.json"]
+  "publish_files": ["competitor_offer_radar.py", "install.py", "README.md", "README.ru.md", "LICENSE", "NOTICE.md", "MODULE.json", "AGENTS.md", "skills/competitor-offer-radar/SKILL.md", "tests/test_radar.py", "tests/smoke_install.py", ".github/workflows/ci.yml", "examples/before.json", "examples/after.json"]
 }

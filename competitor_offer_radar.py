@@ -325,7 +325,9 @@ def main(argv=None):
             result = compare(load_snapshot(args.before), load_snapshot(args.after))
         else:
             result = onboard(args.state_dir)
-        print(json.dumps(result, ensure_ascii=False, indent=2, default=decimal_text, allow_nan=False))
+        # ASCII JSON escapes preserve Unicode after parsing, even when a
+        # Windows pipe uses a legacy encoding rather than UTF-8.
+        print(json.dumps(result, ensure_ascii=True, indent=2, default=decimal_text, allow_nan=False))
         return 0 if result["ok"] else 2
     except InputError as error:
         print(json.dumps({"ok": False, "error": {"code": "invalid_input", "message": str(error)}}))
