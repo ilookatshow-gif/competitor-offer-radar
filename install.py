@@ -38,8 +38,8 @@ def install(prefix):
                         "runpy.run_path(str(Path(__file__).resolve().parents[1] / 'competitor_offer_radar.py'), run_name='__main__')\n",
                         encoding="utf-8")
     launcher.chmod(0o755)
-    (binary_dir / "competitor-offer-radar.cmd").write_text(
-        '@echo off\r\npython "%~dp0..\\competitor_offer_radar.py" %*\r\n', encoding="utf-8")
+    (binary_dir / "competitor-offer-radar.cmd").write_bytes(
+        '@echo off\r\npython "%~dp0..\\competitor_offer_radar.py" %*\r\n'.encode("utf-8"))
     return {"ok": True, "installed_prefix": str(destination), "files_copied": len(files),
             "command": str(launcher), "onboarding": "explicit command only", "network": False}
 
@@ -49,7 +49,7 @@ if __name__ == "__main__":
     parser.add_argument("--prefix", required=True)
     args = parser.parse_args()
     try:
-        print(json.dumps(install(args.prefix), ensure_ascii=False, indent=2))
+        print(json.dumps(install(args.prefix), ensure_ascii=True, indent=2))
     except (OSError, ValueError, KeyError, TypeError):
         print(json.dumps({"ok": False, "error": "installation failed; prefix must be new and manifest valid; inspect partial prefix if created"}))
         sys.exit(2)

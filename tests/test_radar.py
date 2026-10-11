@@ -368,6 +368,43 @@ class RadarTests(unittest.TestCase):
             self.assertEqual(repeat.returncode, 2)
             self.assertFalse(json.loads(repeat.stdout)["ok"])
 
+    def legacy_output(self, script, *args):
+        return subprocess.run(
+            [sys.executable, "-B", str(ROOT / script), *map(str, args)],
+            capture_output=True, timeout=10,
+            env=dict(os.environ, PYTHONDONTWRITEBYTECODE="1",
+                     PYTHONIOENCODING="cp1252", PYTHONUTF8="0"))
+
+    def test_legacy_encoding_greeting_preserves_russian_once(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            state = Path(temporary) / "Состояние"
+            first = self.legacy_output("competitor_offer_radar.py", "onboard", "--state-dir", state)
+            second = self.legacy_output("competitor_offer_radar.py", "onboard", "--state-dir", state)
+        self.assertEqual(first.returncode, 0, first.stderr)
+        self.assertEqual(second.returncode, 0, second.stderr)
+        self.assertEqual(first.stderr, b"")
+        self.assertEqual(radar.AUTHOR_MESSAGE, json.loads(first.stdout.decode("ascii"))["message"])
+        self.assertNotIn("message", json.loads(second.stdout.decode("ascii")))
+
+    def test_legacy_encoding_comparison_preserves_russian_names(self):
+        process = self.legacy_output("competitor_offer_radar.py", "compare",
+                                     ROOT / "examples/before.json", ROOT / "examples/after.json")
+        self.assertEqual(process.returncode, 0, process.stderr)
+        self.assertEqual(process.stderr, b"")
+        data = json.loads(process.stdout.decode("ascii"))
+        self.assertIn("Учебный пример", json.dumps(data, ensure_ascii=False))
+
+    def test_legacy_encoding_installer_preserves_russian_path(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            prefix = Path(temporary) / "Установка"
+            process = self.legacy_output("install.py", "--prefix", prefix)
+            self.assertEqual(process.returncode, 0, process.stderr)
+            data = json.loads(process.stdout.decode("ascii"))
+            self.assertEqual(Path(data["installed_prefix"]), prefix)
+            cmd = (prefix / "bin/competitor-offer-radar.cmd").read_bytes()
+            self.assertNotIn(b"\r\r\n", cmd)
+            self.assertEqual(cmd.count(b"\r\n"), 2)
+
 
 if __name__ == "__main__":
     unittest.main()
