@@ -103,4 +103,9 @@ python3 -B tests/smoke_install.py
 
 ## Автор и продолжение
 
-Подготовил **Дмитрий Лукашов**. Практические разборы ИИ для бизнеса: https://t.me/lookatsoul . Если хотите адаптировать анализ к своим процессам или поручить внедрение — https://lookatshow.ru/executive?utm_source=github&utm_medium=open_module&utm_campaign=competitor-offer-radar&utm_content=readme . Объём внедрения согласуется отдельно. Бесплатный модуль не требует покупки ядра или подписки.
+Можно бесплатно повторить пример и сравнить свои разрешённые снимки. Подписка, передача контактов и покупка ядра не нужны.
+
+Модуль подготовил **Дмитрий Лукашов**. [Практические разборы ИИ для бизнеса в Telegram](https://t.me/lookatsoul).
+
+- Хотите сами сравнивать предложения с ИИ-агентом? [Обсудить личное обучение](https://lookatshow.ru/executive?utm_source=github&utm_medium=open_module&utm_campaign=competitor-offer-radar&utm_content=training). Разберём подготовку сопоставимых данных, проверку изменений и работу с неизвестными значениями.
+- Нужен регулярный анализ под данные и процессы вашей компании? [Обсудить внедрение](https://lookatshow.ru/ai-implementation/?utm_source=github&utm_medium=open_module&utm_campaign=competitor-offer-radar&utm_content=implementation). Объём проекта, доступы, критерии приёмки и стоимость согласуем отдельно. Внедрение не входит в обучение. Сам бесплатный модуль остаётся офлайн-сравнением, а не сборщиком сайтов.
