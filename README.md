@@ -76,4 +76,9 @@ The check installs into a new temporary path with spaces and Cyrillic characters
 
 ## Author / business practice
 
-Prepared by **Дмитрий Лукашов** (Dmitry Lukashov). Practical business AI: https://t.me/lookatsoul . To adapt the workflow to your company, learn to use agents or discuss implementation: https://lookatshow.ru/executive?utm_source=github&utm_medium=open_module&utm_campaign=competitor-offer-radar&utm_content=readme . Implementation scope is agreed separately. This module works free without subscribing or buying the core.
+Run the example and compare your own authorised snapshots for free. No subscription, contact details or paid core are required.
+
+Prepared by **Дмитрий Лукашов (Dmitry Lukashov)**. [Practical business AI on Telegram](https://t.me/lookatsoul).
+
+- Want to compare offers with an AI agent yourself? [Discuss personal training](https://lookatshow.ru/executive?utm_source=github&utm_medium=open_module&utm_campaign=competitor-offer-radar&utm_content=training). Learn to prepare comparable inputs, check observed changes and keep unknowns visible.
+- Need a repeatable comparison process adapted to your company's data and workflow? [Discuss implementation](https://lookatshow.ru/ai-implementation/?utm_source=github&utm_medium=open_module&utm_campaign=competitor-offer-radar&utm_content=implementation). Project scope, access, acceptance criteria and cost are agreed separately; training does not include implementation. This free module remains an offline comparison tool, not a website scraper.
